@@ -1,19 +1,19 @@
-﻿System.Console.WriteLine("KESCHA dasturiga xush kelibsiz :)");
-int ageKESCHA = 2;
-System.Console.Write("Enter your name : ");
-string name = Console.ReadLine();
-System.Console.WriteLine($"Hello, {name}");
+﻿using KESCHA.Classes;
 
-System.Console.Write("Enter your age : ");
-int age = Convert.ToInt32(Console.ReadLine());
-System.Console.WriteLine($"Your age is {age}");
-System.Console.WriteLine($"KESCHA age is {ageKESCHA}");
+Animal kescha = new Animal(name: "KESCHA",age: 3);
 
-System.Console.WriteLine($"Age difference is {age-ageKESCHA}");
+Console.Write("Enter your name : ");
+string userName = Console.ReadLine();
+kescha.Greet(userName);
 
-System.Console.WriteLine($"KESCHA {name}dan katta : {ageKESCHA>age}");
-System.Console.WriteLine($"KESCHA {name}dan kichik : {ageKESCHA<age}");
-System.Console.WriteLine($"KESCHA {name}dan katta yoki teng : {ageKESCHA>=age}");
-System.Console.WriteLine($"KESCHA {name}dan kichik yoki teng : {ageKESCHA<=age}");
-System.Console.WriteLine($"KESCHA {name}ga teng : {ageKESCHA==age}");
-System.Console.WriteLine($"KESCHA {name}ga teng ema : {ageKESCHA!=age}");
+Console.Write("Enter your age : ");
+string ageAsString = Console.ReadLine();
+
+Console.WriteLine("Converting...");
+int userAge = Convert.ToInt32(ageAsString);
+Console.WriteLine($"Successfully converted! {userAge}");
+
+kescha.CalculateAgeDifferenceWithNoReturn(userAge);
+kescha.PrintAgeDifference();
+kescha.CompareAges(userAge);
+kescha.TellAboutFriends(userName, userAge);
